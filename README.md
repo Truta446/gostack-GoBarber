@@ -10,7 +10,7 @@ $ yarn
 ## To run docker image:
 
 ```sh
-$ docker start database
+$ docker start postgresbarber
 $ docker start mongobarber
 $ docker start redisbarber
 ```
@@ -18,7 +18,7 @@ $ docker start redisbarber
 ## To mount dockers:
 
 ```sh
-$ docker run --name postgresbarber -p 5432:5432 -d -t postgres
+$ docker run --name postgresbarber -p 5434:5432 -d -t postgres
 $ docker run --name mongobarber -p 27017:27017 -d -t mongo
 $ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 ```
@@ -28,4 +28,10 @@ $ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 ```sh
 $ yarn dev
 $ yarn queue
+```
+
+## To run all migrates:
+
+```sh
+$ yarn sequelize db:migrate
 ```
